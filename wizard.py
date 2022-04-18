@@ -34,51 +34,13 @@ def button_add(number):
 
 
 
-#define buttons
-button_1 =tk.Button(window, text = "1", padx=40, pady=20, command = lambda:button_add(1))
-button_2 =tk.Button(window, text = "2", padx=40, pady=20, command = lambda:button_add(2))
-button_3 =tk.Button(window, text = "3", padx=40, pady=20, command = lambda:button_add(3))
-button_4 =tk.Button(window, text = "4", padx=40, pady=20, command = lambda:button_add(4))
-button_5 =tk.Button(window, text = "5", padx=40, pady=20, command = lambda:button_add(5))
-button_6 =tk.Button(window, text = "6", padx=40, pady=20, command = lambda:button_add(6))
-button_7 =tk.Button(window, text = "7", padx=40, pady=20, command = lambda:button_add(7))
-button_8 =tk.Button(window, text = "8", padx=40, pady=20, command = lambda:button_add(8))
-button_9 =tk.Button(window, text = "9", padx=40, pady=20, command = lambda:button_add(9))
-button_10 =tk.Button(window, text = "10", padx=40, pady=20, command = lambda:button_add(10))
-button_11=tk.Button(window, text = "11", padx=40, pady=20, command = lambda:button_add(11))
-button_12 =tk.Button(window, text = "12", padx=40, pady=20, command = lambda:button_add(12))
-button_13 =tk.Button(window, text = "13", padx=40, pady=20, command = lambda:button_add(13))
-button_14=tk.Button(window, text = "14", padx=40, pady=20, command = lambda:button_add(14))
-button_15 =tk.Button(window, text = "15", padx=40, pady=20, command = lambda:button_add(15))
-button_16=tk.Button(window, text = "16", padx=40, pady=20, command = lambda:button_add(16))
-button_17 =tk.Button(window, text = "17", padx=40, pady=20, command = lambda:button_add(17))
-button_18=tk.Button(window, text = "18", padx=40, pady=20, command = lambda:button_add(18))
-button_19=tk.Button(window, text = "19", padx=40, pady=20, command = lambda:button_add(19))
-button_20=tk.Button(window, text = "20", padx=40, pady=20, command = lambda:button_add(20))
+#define buttons and add to screen
+for x in range(1, 21):
+    button = tk.Button(window, text = str(x), padx=40, pady=20, command = lambda:button_add(x))
+    row = math.floor(x / 4.1)
+    column = (x - 1) % 4
 
-# put the buttons on the screen
-
-
-button_1.grid(row=0, column=0)
-button_2.grid(row=0, column=1)
-button_3.grid(row=0, column=2)
-button_4.grid(row=0, column=3)
-button_5.grid(row=1, column=0)
-button_6.grid(row=1, column=1)
-button_7.grid(row=1, column=2)
-button_8.grid(row=1, column=3)
-button_9.grid(row=2, column=0)
-button_10.grid(row=2, column=1)
-button_11.grid(row=2, column=2)
-button_12.grid(row=2, column=3)
-button_13.grid(row=3, column=0)
-button_14.grid(row=3, column=1)
-button_15.grid(row=3, column=2)
-button_16.grid(row=3, column=3)
-button_17.grid(row=4, column=0)
-button_18.grid(row=4, column=1)
-button_19.grid(row=4, column=2)
-button_20.grid(row=4, column=3)
+    button.grid(row=row, column=column)
 
 #adds a blank page
 pdf.add_page()
